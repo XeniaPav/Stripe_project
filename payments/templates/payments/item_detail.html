@@ -1,0 +1,48 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Сервис оплаты</title>
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+</head>
+
+<div class="container">
+    <div class="row text-center">
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{object.name}} </h4>
+                </div>
+
+                <div class="card-body">
+                    <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                        <li>{{object.description}}</li>
+                        <li>Цена: {{object.price}}</li>
+                    </ul>
+                        <li><a class="text-muted" href="{% url 'payments:buy_item' object.pk %}">Buy</a></li>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+            <div class="col-12 col-md">
+                Сервис оплаты
+                <small class="d-block mb-3 text-muted">&copy; 2024</small>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Категории</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="">Тут пока ничего интересного</a></li>
+                </ul>
+            </div>
+    </footer>
+</div>
+
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
